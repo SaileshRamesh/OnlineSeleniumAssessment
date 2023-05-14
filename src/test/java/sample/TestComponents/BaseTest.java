@@ -24,22 +24,22 @@ public class BaseTest {
 		LANDING_PAGE.navigateToURL("https://www.saucedemo.com/");
 		return LANDING_PAGE;
 	}
-	
+
 	public void waitUntilCompletePageIsLoaded() {
-		JavascriptExecutor j = (JavascriptExecutor)driver;
-		if (j.executeScript("return document.readyState").toString().equals("complete")){
-		   System.out.println("Page has loaded completely");
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		if (j.executeScript("return document.readyState").toString().equals("complete")) {
+			System.out.println("Page has loaded completely");
 		}
 	}
-	
+
 	public void navigateBack() {
 		driver.navigate().back();
 	}
-	
+
 	public String getTitle() {
 		return driver.getTitle();
 	}
-	
+
 	@AfterTest
 	public void closeDriver() {
 		driver.close();
